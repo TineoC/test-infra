@@ -64,6 +64,7 @@ approve:
 - repos:
   - kubernetes/cluster-registry
   - kubernetes/contrib
+  - kubernetes/contributor-site
   - kubernetes/dashboard
   - kubernetes/dns
   - kubernetes/examples
@@ -188,6 +189,10 @@ label:
     - ci-short
     - ci-extended
     - ci-full
+    # Call for Help labels for kubernetes/contributor-site
+    - call-for-help
+    - sig-contribex-nco
+    - call-for-help-approved
 
   restricted_labels:
     kubernetes/kubernetes:
@@ -200,6 +205,9 @@ label:
           - pushkarj
         # This label is used to filter/tag CVEs announced by SRC
         label: official-cve-feed
+      - allowed_teams:
+          - security-response-committee
+        label: cve/wontfix
     kubernetes/enhancements:
       # Restrict setting of tracked/* labels to the enhancements team.
       - label: tracked/no
@@ -241,6 +249,10 @@ label:
         - sig-storage-leads
         - sig-testing-leads
         - sig-windows-leads
+    kubernetes-sigs/provider-aws-test-infra:
+      - label: skip-review
+        allowed_teams:
+        - provider-aws-test-infra-admins
 
 lgtm:
 - repos:
@@ -586,9 +598,9 @@ milestone_applier:
     release-2.6: v2.6
     release-2.5: v2.5
   kubernetes-sigs/cluster-api-provider-azure:
-    main: v1.24
+    main: v1.25
+    release-1.24: v1.24
     release-1.23: v1.23
-    release-1.22: v1.22
   kubernetes-sigs/cluster-api-provider-digitalocean:
     main: v1.1.0
     release-1.0: v1.0.0
@@ -617,7 +629,7 @@ milestone_applier:
   kubernetes-sigs/boskos:
     master: v1.23
   kubernetes/website:
-    dev-1.36: 1.36
+    dev-1.37: 1.37
   kubernetes/node-problem-detector:
     main: v1.36
     release-1.35: v1.35
@@ -2251,3 +2263,9 @@ external_plugins:
     events:
       - issue_comment
       - pull_request
+  kubernetes-sigs/dra-driver-nvidia-gpu:
+  - name: cherrypicker
+    events:
+      - issue_comment
+      - pull_request
+    endpoint: http://cherrypicker

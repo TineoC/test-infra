@@ -10,7 +10,7 @@ periodics:
   cluster: k8s-infra-prow-build
   decorate: true
   decoration_config:
-    timeout: 200m
+    timeout: 2h20m0s
   extra_refs:
   - base_ref: master
     org: kubernetes
@@ -29,7 +29,7 @@ periodics:
       - --gcp-region=us-central1
       - --gcp-node-image=gci
       - --extract=ci/latest
-      - --timeout=180m
+      - --timeout=120m
       - --env=ENABLE_POD_PRIORITY=true
       - --env=KUBE_FEATURE_GATES=AllAlpha=true,AllBeta=true,EventedPLEG=false
       - --env=ENABLE_CACHE_MUTATION_DETECTOR=true
@@ -40,7 +40,7 @@ periodics:
       command:
       - runner.sh
       - /workspace/scenarios/kubernetes_e2e.py
-      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       resources:
         limits:
           cpu: 1000m
@@ -86,7 +86,7 @@ periodics:
       command:
       - runner.sh
       - /workspace/scenarios/kubernetes_e2e.py
-      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       resources:
         limits:
           cpu: 2000m
@@ -105,7 +105,7 @@ periodics:
   cluster: k8s-infra-prow-build
   decorate: true
   decoration_config:
-    timeout: 200m
+    timeout: 1h20m0s
   extra_refs:
   - base_ref: master
     org: kubernetes
@@ -124,12 +124,12 @@ periodics:
       - --gcp-region=us-central1
       - --gcp-node-image=gci
       - --extract=ci/latest
-      - --timeout=180m
+      - --timeout=60m
       - --test_args=--ginkgo.focus=\[Feature:Reboot\] --minStartupPods=8
       command:
       - runner.sh
       - /workspace/scenarios/kubernetes_e2e.py
-      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       resources:
         limits:
           cpu: 1000m
@@ -174,7 +174,7 @@ periodics:
       command:
       - runner.sh
       - /workspace/scenarios/kubernetes_e2e.py
-      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       resources:
         limits:
           cpu: 1000m
@@ -219,7 +219,7 @@ periodics:
       command:
       - runner.sh
       - /workspace/scenarios/kubernetes_e2e.py
-      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       resources:
         limits:
           cpu: 1000m
@@ -269,7 +269,7 @@ presubmits:
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
-        image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+        image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         resources:
           limits:
             cpu: "4"

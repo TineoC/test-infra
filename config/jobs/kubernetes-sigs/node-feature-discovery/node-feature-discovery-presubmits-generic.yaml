@@ -43,7 +43,7 @@ presubmits:
       preset-dind-enabled: "true"
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         securityContext:
           privileged: true
         command:
@@ -53,10 +53,10 @@ presubmits:
         resources:
           limits:
             cpu: 4
-            memory: 8Gi
+            memory: 16Gi
           requests:
             cpu: 4
-            memory: 8Gi
+            memory: 16Gi
   - name: pull-node-feature-discovery-build-gh-pages-generic
     cluster: eks-prow-build-cluster
     run_if_changed: "^docs/"
@@ -71,7 +71,7 @@ presubmits:
       preset-dind-enabled: "true"
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         securityContext:
           privileged: true
         command:

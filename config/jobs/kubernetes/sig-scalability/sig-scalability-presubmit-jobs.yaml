@@ -34,7 +34,7 @@ presubmits:
       testgrid-tab-name: pull-kubernetes-e2e-gce-100-performance
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
@@ -118,7 +118,7 @@ presubmits:
     spec:
       serviceAccountName: prow-build
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - runner.sh
         args:
@@ -204,7 +204,7 @@ presubmits:
       testgrid-tab-name: pull-kubernetes-e2e-gce-correctness
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
@@ -270,7 +270,7 @@ presubmits:
       testgrid-tab-name: pull-kubernetes-kubemark-e2e-gce-big
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
@@ -358,7 +358,7 @@ presubmits:
       testgrid-tab-name: pull-kubernetes-kubemark-e2e-gce-scale
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
@@ -440,7 +440,7 @@ presubmits:
     spec:
       serviceAccountName: prow-build
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - runner.sh
         args:
@@ -449,6 +449,8 @@ presubmits:
           privileged: true
         env:
         - name: CL2_ENABLE_INFORMER_LATENCY_TEST
+          value: "true"
+        - name: CL2_RESTART_APISERVER
           value: "true"
         - name: ETCD_QUOTA_BACKEND_BYTES # 20GB
           value: "21474836480"
@@ -508,10 +510,104 @@ presubmits:
         resources:
           requests:
             cpu: 7
-            memory: "32Gi"
+            memory: "27Gi"
           limits:
             cpu: 7
-            memory: "32Gi"
+            memory: "27Gi"
+
+  # Mirrors pull-perf-tests-gce-master-scale-performance-100 with CL2_RESTART_APISERVER set to true.
+  # TODO(Jefftree): revert after testing to be stable.
+  - name: pull-kubernetes-gce-master-scale-performance-100-apiserver-restart
+    cluster: k8s-infra-prow-build
+    always_run: false
+    optional: true
+    branches:
+    - master
+    - main
+    decorate: true
+    path_alias: k8s.io/kubernetes
+    labels:
+      preset-k8s-ssh: "true"
+      preset-dind-enabled: "true"
+    decoration_config:
+      timeout: 100m
+    extra_refs:
+    - org: kubernetes
+      repo: kops
+      base_ref: master
+      workdir: true
+      path_alias: k8s.io/kops
+    - org: kubernetes
+      repo: perf-tests
+      base_ref: master
+      path_alias: k8s.io/perf-tests
+    annotations:
+      testgrid-dashboards: presubmits-kubernetes-scalability
+      testgrid-tab-name: pull-kubernetes-gce-master-scale-performance-100-apiserver-restart
+    spec:
+      serviceAccountName: prow-build
+      containers:
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
+        command:
+        - runner.sh
+        args:
+        - ./tests/e2e/scenarios/scalability/run-test.sh
+        securityContext:
+          privileged: true
+        env:
+        - name: CL2_RESTART_APISERVER
+          value: "true"
+        - name: KUBE_SSH_KEY_PATH
+          value: /etc/ssh-key-secret/ssh-private
+        - name: KUBE_SSH_USER
+          value: prow
+        - name: GOPATH
+          value: /home/prow/go
+        - name: CNI_PLUGIN
+          value: gce
+        - name: KUBE_NODE_COUNT
+          value: "100"
+        - name: CL2_LOAD_TEST_THROUGHPUT
+          value: "50"
+        - name: CL2_DELETE_TEST_THROUGHPUT
+          value: "50"
+        - name: CL2_RATE_LIMIT_POD_CREATION
+          value: "false"
+        - name: NODE_MODE
+          value: "master"
+        - name: KUBE_PROXY_MODE
+          value: "nftables"
+        - name: CONTROL_PLANE_COUNT
+          value: "1"
+        - name: CONTROL_PLANE_SIZE
+          value: "c4-standard-32"
+        - name: PROMETHEUS_SCRAPE_KUBE_PROXY
+          value: "true"
+        - name: CL2_ENABLE_DNS_PROGRAMMING
+          value: "true"
+        - name: CL2_ENABLE_API_AVAILABILITY_MEASUREMENT
+          value: "true"
+        - name: CL2_API_AVAILABILITY_PERCENTAGE_THRESHOLD
+          value: "99.5"
+        - name: CL2_ALLOWED_SLOW_API_CALLS
+          value: "1"
+        - name: ENABLE_PROMETHEUS_SERVER
+          value: "true"
+        - name: TEAR_DOWN_PROMETHEUS_SERVER
+          value: "false"
+        - name: PROMETHEUS_PVC_STORAGE_CLASS
+          value: "ssd-csi"
+        - name: CLOUD_PROVIDER
+          value: "gce"
+        - name: BOSKOS_RESOURCE_TYPE
+          value: "scalability-project"
+        resources:
+          requests:
+            cpu: 5
+            memory: 16Gi
+          limits:
+            cpu: 5
+            memory: 16Gi
 
   kubernetes/perf-tests:
   - name: pull-perf-tests-benchmark-kube-dns
@@ -539,7 +635,7 @@ presubmits:
     run_if_changed: ^dns/.*$
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
@@ -593,7 +689,7 @@ presubmits:
     run_if_changed: ^clusterloader2/.*$
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
@@ -665,7 +761,7 @@ presubmits:
     run_if_changed: ^clusterloader2/.*$
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - /workspace/scenarios/kubernetes_e2e.py
@@ -733,7 +829,7 @@ presubmits:
       testgrid-tab-name: pull-perf-tests-util-images
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -782,7 +878,7 @@ presubmits:
       testgrid-tab-name: pull-perf-tests-verify-test
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - verify/test.sh
         resources:
@@ -826,7 +922,7 @@ presubmits:
       testgrid-tab-name: pull-perf-tests-verify-lint
     spec:
       containers:
-      - image: golangci/golangci-lint:v2.7.2
+      - image: golangci/golangci-lint:v2.12.1
         command:
         - make
         args:
@@ -867,7 +963,7 @@ presubmits:
       testgrid-tab-name: pull-perf-tests-ec2-master-scale-performance-100
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - runner.sh
         args:
@@ -950,7 +1046,7 @@ presubmits:
       testgrid-tab-name: pull-perf-tests-ec2-master-scale-performance-500
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - runner.sh
         args:
@@ -1034,7 +1130,7 @@ presubmits:
       testgrid-tab-name: pull-perf-tests-ec2-master-scale-performance-5000
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - runner.sh
         args:
@@ -1118,7 +1214,7 @@ presubmits:
     spec:
       serviceAccountName: prow-build
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - runner.sh
         args:
@@ -1205,7 +1301,7 @@ presubmits:
     spec:
       serviceAccountName: prow-build
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         command:
         - runner.sh
         args:
@@ -1274,7 +1370,7 @@ presubmits:
         resources:
           requests:
             cpu: 7
-            memory: "32Gi"
+            memory: "27Gi"
           limits:
             cpu: 7
-            memory: "32Gi"
+            memory: "27Gi"

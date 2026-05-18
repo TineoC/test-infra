@@ -24,7 +24,7 @@ presubmits:
         runAsUser: 2001
         runAsGroup: 2010
       containers:
-        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
           securityContext:
             allowPrivilegeEscalation: false
           command:
@@ -58,7 +58,7 @@ presubmits:
         runAsUser: 2001
         runAsGroup: 2010
       containers:
-        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
           securityContext:
             allowPrivilegeEscalation: false
           command:
@@ -103,7 +103,7 @@ presubmits:
         runAsUser: 2001
         runAsGroup: 2010
       containers:
-        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
           securityContext:
             allowPrivilegeEscalation: false
           command:
@@ -114,14 +114,13 @@ presubmits:
             value: ""
           - name: KUBE_HACK_TOOLS_GOTOOLCHAIN
             value: auto
-          # TODO: direct copy from pull-kubernetes-bazel-test, tune these
           resources:
             limits:
               cpu: 4
-              memory: "36Gi"
+              memory: "16Gi"
             requests:
               cpu: 4
-              memory: "36Gi"
+              memory: "16Gi"
 periodics:
   - interval: 1h
     name: ci-kubernetes-unit
@@ -148,7 +147,7 @@ periodics:
         runAsUser: 2001
         runAsGroup: 2010
       containers:
-        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+        - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
           securityContext:
             allowPrivilegeEscalation: false
           command:

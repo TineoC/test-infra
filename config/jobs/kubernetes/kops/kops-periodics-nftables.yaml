@@ -32,7 +32,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='136693071363/debian-11-amd64-20260419-2453' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=1.7.29 --set=cluster.spec.containerd.runc.version=1.3.4 --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='136693071363/debian-11-amd64-20260509-2473' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=1.7.29 --set=cluster.spec.containerd.runc.version=1.3.4 --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -47,7 +47,7 @@ periodics:
         value: admin
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -64,7 +64,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-deb11, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-deb11, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-deb11
 
@@ -98,7 +98,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='136693071363/debian-12-amd64-20260413-2447' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='136693071363/debian-12-amd64-20260510-2474' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -113,7 +113,7 @@ periodics:
         value: admin
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -130,7 +130,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-deb12, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-deb12, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-deb12
 
@@ -164,7 +164,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='136693071363/debian-13-amd64-20260413-2447' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='136693071363/debian-13-amd64-20260509-2473' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -179,7 +179,7 @@ periodics:
         value: admin
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -196,7 +196,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-deb13, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-deb13, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-deb13
 
@@ -230,7 +230,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260424' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260503' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -245,7 +245,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -262,7 +262,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2204, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2204, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2204
 
@@ -296,7 +296,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20260424' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20260503' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -311,7 +311,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -328,7 +328,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2204, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2204, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2204arm64
 
@@ -362,7 +362,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260424' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260507' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -377,7 +377,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -394,7 +394,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2404
 
@@ -428,7 +428,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -443,7 +443,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -460,7 +460,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2404arm64
 
@@ -494,7 +494,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-amd64-server-20260421' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-amd64-server-20260505' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -509,7 +509,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -526,7 +526,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2510, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2510, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2510
 
@@ -560,7 +560,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-arm64-server-20260421' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-arm64-server-20260505' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -575,7 +575,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -592,7 +592,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2510, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2510, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2510arm64
 
@@ -626,7 +626,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-amd64-server-20260421' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-amd64-server-20260503' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -641,7 +641,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -658,7 +658,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2604, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2604, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2604
 
@@ -692,7 +692,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-arm64-server-20260421' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-arm64-server-20260503' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -707,7 +707,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -724,7 +724,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2604, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2604, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-u2604arm64
 
@@ -758,7 +758,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -773,7 +773,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -790,7 +790,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-al2023, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-al2023, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-al2023
 
@@ -824,7 +824,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-arm64' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-arm64' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -839,7 +839,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -856,7 +856,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-al2023, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-al2023, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-al2023arm64
 
@@ -890,7 +890,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260331-x86_64-0-Hourly2-GP3' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260428-x86_64-0-Hourly2-GP3' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -905,7 +905,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -922,7 +922,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-rhel9, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rhel9, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-rhel9
 
@@ -956,7 +956,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='309956199498/RHEL-10.1.0_HVM-20260331-arm64-0-Hourly2-GP3' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+          --create-args="--image='309956199498/RHEL-10.1.0_HVM-20260429-arm64-0-Hourly2-GP3' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -971,7 +971,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -988,7 +988,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-rhel10, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rhel10, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-rhel10arm64
 
@@ -1037,7 +1037,7 @@ periodics:
         value: rocky
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1054,7 +1054,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-rocky9, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rocky9, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-rocky9
 
@@ -1103,7 +1103,7 @@ periodics:
         value: rocky
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1120,7 +1120,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-rocky10, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rocky10, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-rocky10arm64
 
@@ -1154,7 +1154,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='075585003325/Flatcar-alpha-4669.0.0-hvm' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
+          --create-args="--image='075585003325/Flatcar-alpha-4694.0.0-hvm' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --validation-wait=20m \
@@ -1170,7 +1170,7 @@ periodics:
         value: core
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1187,7 +1187,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-flatcar, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-flatcar, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-nftables-flatcar
 
@@ -1221,7 +1221,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-121-18867-381-81' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-121-18867-381-125' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1236,7 +1236,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1253,7 +1253,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos121, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-cos121, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-cos121
 
@@ -1287,7 +1287,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-arm64-121-18867-381-81' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+          --create-args="--image='cos-cloud/cos-arm64-121-18867-381-125' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1302,7 +1302,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1319,7 +1319,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos121, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-cos121, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-cos121arm64
 
@@ -1353,7 +1353,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1368,7 +1368,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1385,7 +1385,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-cos125
 
@@ -1419,7 +1419,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-arm64-125-19216-220-130' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+          --create-args="--image='cos-cloud/cos-arm64-125-19216-395-4' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1434,7 +1434,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1451,7 +1451,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-cos125arm64
 
@@ -1500,7 +1500,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1517,7 +1517,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cosdev, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-cosdev, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-cosdev
 
@@ -1566,7 +1566,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1583,7 +1583,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cosdev, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-cosdev, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-cosdevarm64
 
@@ -1617,7 +1617,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='debian-cloud/debian-12-bookworm-v20260417' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+          --create-args="--image='debian-cloud/debian-12-bookworm-v20260505' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1632,7 +1632,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1649,7 +1649,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-deb12, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-deb12, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-deb12
 
@@ -1683,7 +1683,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='debian-cloud/debian-12-bookworm-arm64-v20260417' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+          --create-args="--image='debian-cloud/debian-12-bookworm-arm64-v20260505' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1698,7 +1698,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1715,7 +1715,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-deb12, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-deb12, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-deb12arm64
 
@@ -1749,7 +1749,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='debian-cloud/debian-13-trixie-v20260417' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+          --create-args="--image='debian-cloud/debian-13-trixie-v20260505' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1764,7 +1764,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1781,7 +1781,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-deb13, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-deb13, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-deb13
 
@@ -1815,7 +1815,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='debian-cloud/debian-13-trixie-arm64-v20260417' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+          --create-args="--image='debian-cloud/debian-13-trixie-arm64-v20260505' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1830,7 +1830,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1847,7 +1847,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-deb13, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-deb13, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-deb13arm64
 
@@ -1881,7 +1881,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='ubuntu-os-cloud/ubuntu-2204-jammy-v20260421' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
+          --create-args="--image='ubuntu-os-cloud/ubuntu-2204-jammy-v20260504' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1896,7 +1896,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1913,7 +1913,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2204, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2204, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-u2204
 
@@ -1947,7 +1947,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260422' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
+          --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260503' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1962,7 +1962,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1979,7 +1979,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2404, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-u2404
 
@@ -2013,7 +2013,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-arm64-v20260422' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+          --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-arm64-v20260503' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -2028,7 +2028,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2045,7 +2045,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2404, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-u2404arm64
 
@@ -2079,7 +2079,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-amd64-v20260422' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
+          --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-amd64-v20260507' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -2094,7 +2094,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2111,7 +2111,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-umini2404, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-umini2404, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-umini2404
 
@@ -2145,7 +2145,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-arm64-v20260422' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+          --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-arm64-v20260507' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -2160,7 +2160,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2177,7 +2177,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-umini2404, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-umini2404, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-umini2404arm64
 
@@ -2211,7 +2211,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='rhel-cloud/rhel-10-v20260417' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+          --create-args="--image='rhel-cloud/rhel-10-v20260505' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -2226,7 +2226,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2243,7 +2243,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-rhel10, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rhel10, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-rhel10
 
@@ -2277,7 +2277,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-arm64-v20260313' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+          --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-arm64-v20260427' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -2292,7 +2292,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2309,7 +2309,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-rocky10, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rocky10, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-rocky10arm64
 
@@ -2343,7 +2343,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-v20260313' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+          --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-v20260427' --channel=alpha --networking=kindnet --set=cluster.spec.kubeProxy.proxyMode=nftables --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -2358,7 +2358,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2375,6 +2375,6 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-rocky10, kops-gce, kops-k8s-stable, kops-latest, kops-nftables, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rocky10, kops-gce, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-nftables, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-nftables-rocky10

@@ -12,7 +12,7 @@ presubmits:
       preset-service-account: "true"
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -53,7 +53,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -112,7 +112,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -172,7 +172,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -234,7 +234,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -315,7 +315,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -380,7 +380,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - ./scripts/ci-entrypoint.sh
@@ -438,7 +438,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - ./scripts/ci-entrypoint.sh
@@ -498,7 +498,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         - ./scripts/ci-entrypoint.sh
@@ -561,7 +561,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -639,7 +639,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -699,7 +699,7 @@ presubmits:
       preset-service-account: "true"
     spec:
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -740,7 +740,7 @@ presubmits:
     spec:
       serviceAccountName: azure
       containers:
-      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+      - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
         command:
         - runner.sh
         args:
@@ -819,7 +819,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -881,7 +881,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -943,7 +943,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1007,7 +1007,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1071,7 +1071,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1131,7 +1131,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1176,25 +1176,35 @@ periodics:
     preset-dind-enabled: "true"
     preset-kind-volume-mounts: "true"
     preset-azure-community: "true"
+    preset-capz-windows-common: "true"
+    preset-capz-windows-2022: "true"
+    preset-capz-containerd-2-0-latest: "true"
   extra_refs:
   - org: kubernetes-sigs
     repo: cluster-api-provider-azure
     base_ref: main
     path_alias: sigs.k8s.io/cluster-api-provider-azure
-    workdir: true
+    workdir: false
   - org: kubernetes-sigs
     repo: cloud-provider-azure
     base_ref: master
     path_alias: sigs.k8s.io/cloud-provider-azure
     workdir: false
+  - org: kubernetes-sigs
+    repo: windows-testing
+    base_ref: master
+    path_alias: sigs.k8s.io/windows-testing
+    workdir: true
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
+      - env
+      - KUBERNETES_VERSION=latest
+      - ./capz/run-capz-e2e.sh
       args:
-      - ./scripts/ci-entrypoint.sh
       - bash
       - -c
       - >-
@@ -1209,12 +1219,6 @@ periodics:
         value: "standard"
       - name: CONTROL_PLANE_MACHINE_COUNT  # CAPZ config
         value: "1"
-      - name: TEST_WINDOWS  # CAPZ config
-        value: "true"
-      - name: KUBERNETES_VERSION  # CAPZ config
-        value: "latest"
-      - name: WORKER_MACHINE_COUNT  # CAPZ config
-        value: "0"
       - name: CLUSTER_PROVISIONING_TOOL  # cloud-provider-azure config
         value: "capz"
       resources:
@@ -1259,7 +1263,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1309,12 +1313,15 @@ periodics:
     preset-dind-enabled: "true"
     preset-kind-volume-mounts: "true"
     preset-azure-community: "true"
+    preset-capz-windows-common: "true"
+    preset-capz-windows-2022: "true"
+    preset-capz-containerd-2-0-latest: "true"
   extra_refs:
   - org: kubernetes-sigs
     repo: cluster-api-provider-azure
     base_ref: main
     path_alias: sigs.k8s.io/cluster-api-provider-azure
-    workdir: true
+    workdir: false
   - org: kubernetes
     repo: kubernetes
     base_ref: master
@@ -1325,14 +1332,21 @@ periodics:
     base_ref: master
     path_alias: sigs.k8s.io/cloud-provider-azure
     workdir: false
+  - org: kubernetes-sigs
+    repo: windows-testing
+    base_ref: master
+    path_alias: sigs.k8s.io/windows-testing
+    workdir: true
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
+      - env
+      - KUBERNETES_VERSION=latest
+      - ./capz/run-capz-e2e.sh
       args:
-      - ./scripts/ci-entrypoint.sh
       - bash
       - -c
       - >-
@@ -1346,16 +1360,10 @@ periodics:
         value: "true"
       - name: AZURE_LOADBALANCER_SKU  # cloud-provider-azure config
         value: "standard"
-      - name: KUBERNETES_VERSION  # CAPZ config
-        value: "latest"
       - name: GINKGO_ARGS  # cloud-provider-azure config
         value: --ginkgo.focus=\[Conformance\]|\[NodeConformance\] --ginkgo.skip=\[Slow\]|\[Serial\]|\[Flaky\]|\[LinuxOnly\]|Should.be.able.to.support.the.1\.17.Sample.API.Server.using.the.current.Aggregator --node-os-distro=windows --report-dir=/logs/artifacts --disable-log-dump=true
       - name: CONTROL_PLANE_MACHINE_COUNT  # CAPZ config
         value: "1"
-      - name: TEST_WINDOWS  # CAPZ config
-        value: "true"
-      - name: WORKER_MACHINE_COUNT  # CAPZ config
-        value: "0"
       - name: CLUSTER_PROVISIONING_TOOL  # cloud-provider-azure config
         value: "capz"
       - name: GINKGO_PARALLEL_NODES  # cloud-provider-azure config
@@ -1402,7 +1410,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1467,7 +1475,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1534,7 +1542,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1606,7 +1614,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1626,7 +1634,7 @@ periodics:
         value: "latest"
       - name: GINKGO_ARGS  # cloud-provider-azure config
         # Check https://github.com/kubernetes-sigs/cloud-provider-azure/issues/224 for the status of each skipped test
-        value: --ginkgo.skip=\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|Delete.Grace.Period|runs.ReplicaSets.to.verify.preemption.running.path|client.go.should.negotiate|should.contain.custom.columns.for.each.resource|Network.should.set.TCP.CLOSE_WAIT.timeout|PodSecurityPolicy|In-tree.Volumes|ephemeral.should.support.expansion.of.pvcs.created.for.ephemeral.pvcs|Should.be.able.to.support.the.1\.17.Sample.API.Server.using.the.current.Aggregator --report-dir=/logs/artifacts --disable-log-dump=true
+        value: --ginkgo.focus=\[Conformance\]|\[NodeConformance\] --ginkgo.skip=\[Slow\]|\[Serial\]|\[Disruptive\]|\[Flaky\]|\[Feature:.+\]|Delete.Grace.Period|runs.ReplicaSets.to.verify.preemption.running.path|client.go.should.negotiate|should.contain.custom.columns.for.each.resource|Network.should.set.TCP.CLOSE_WAIT.timeout|PodSecurityPolicy|In-tree.Volumes|ephemeral.should.support.expansion.of.pvcs.created.for.ephemeral.pvcs|ServiceAccountIssuerDiscovery.should.support.OIDC.discovery.of.service.account.issuer|Should.be.able.to.support.the.1\.17.Sample.API.Server.using.the.current.Aggregator --report-dir=/logs/artifacts --disable-log-dump=true
       - name: CONTROL_PLANE_MACHINE_COUNT  # CAPZ config
         value: "1"
       - name: WORKER_MACHINE_COUNT  # CAPZ config
@@ -1681,7 +1689,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:
@@ -1754,7 +1762,7 @@ periodics:
   spec:
     serviceAccountName: azure
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       command:
       - runner.sh
       args:

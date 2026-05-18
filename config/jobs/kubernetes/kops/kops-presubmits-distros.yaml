@@ -21,7 +21,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -34,7 +34,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='136693071363/debian-11-amd64-20260419-2453' --channel=alpha --networking=cilium --set=cluster.spec.containerd.version=1.7.29 --set=cluster.spec.containerd.runc.version=1.3.4" \
+            --create-args="--image='136693071363/debian-11-amd64-20260509-2473' --channel=alpha --networking=cilium --set=cluster.spec.containerd.version=1.7.29 --set=cluster.spec.containerd.runc.version=1.3.4" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -88,7 +88,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -101,7 +101,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='136693071363/debian-11-amd64-20260419-2453' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=1.7.29 --set=cluster.spec.containerd.runc.version=1.3.4" \
+            --create-args="--image='136693071363/debian-11-amd64-20260509-2473' --channel=alpha --networking=kindnet --set=cluster.spec.containerd.version=1.7.29 --set=cluster.spec.containerd.runc.version=1.3.4" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -155,7 +155,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -168,7 +168,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='136693071363/debian-12-amd64-20260413-2447' --channel=alpha --networking=cilium" \
+            --create-args="--image='136693071363/debian-12-amd64-20260510-2474' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -222,7 +222,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -235,7 +235,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='136693071363/debian-12-amd64-20260413-2447' --channel=alpha --networking=kindnet" \
+            --create-args="--image='136693071363/debian-12-amd64-20260510-2474' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -289,7 +289,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -302,7 +302,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='136693071363/debian-13-amd64-20260413-2447' --channel=alpha --networking=cilium" \
+            --create-args="--image='136693071363/debian-13-amd64-20260509-2473' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -356,7 +356,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -369,7 +369,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='136693071363/debian-13-amd64-20260413-2447' --channel=alpha --networking=kindnet" \
+            --create-args="--image='136693071363/debian-13-amd64-20260509-2473' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -423,7 +423,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -436,7 +436,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260424' --channel=alpha --networking=cilium" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260503' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -490,7 +490,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -503,7 +503,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260424' --channel=alpha --networking=kindnet" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260503' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -557,7 +557,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -570,7 +570,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20260424' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20260503' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -625,7 +625,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -638,7 +638,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20260424' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-arm64-server-20260503' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -693,7 +693,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -706,7 +706,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260424' --channel=alpha --networking=cilium" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260507' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -760,7 +760,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -773,7 +773,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260424' --channel=alpha --networking=kindnet" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-20260507' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -827,7 +827,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -840,7 +840,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -895,7 +895,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -908,7 +908,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -963,7 +963,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -976,7 +976,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-amd64-server-20260421' --channel=alpha --networking=cilium" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-amd64-server-20260505' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1030,7 +1030,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1043,7 +1043,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-amd64-server-20260421' --channel=alpha --networking=kindnet" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-amd64-server-20260505' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1097,7 +1097,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1110,7 +1110,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-arm64-server-20260421' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-arm64-server-20260505' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1165,7 +1165,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1178,7 +1178,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-arm64-server-20260421' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-questing-25.10-arm64-server-20260505' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1233,7 +1233,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1246,7 +1246,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-amd64-server-20260421' --channel=alpha --networking=cilium" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-amd64-server-20260503' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1300,7 +1300,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1313,7 +1313,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-amd64-server-20260421' --channel=alpha --networking=kindnet" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-amd64-server-20260503' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1367,7 +1367,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1380,7 +1380,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-arm64-server-20260421' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-arm64-server-20260503' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1435,7 +1435,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1448,7 +1448,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-arm64-server-20260421' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-resolute-26.04-arm64-server-20260503' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1503,7 +1503,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1516,7 +1516,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=cilium" \
+            --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1570,7 +1570,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1583,7 +1583,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=kindnet" \
+            --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1637,7 +1637,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1650,7 +1650,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-arm64' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-arm64' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1705,7 +1705,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1718,7 +1718,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-arm64' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-arm64' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1773,7 +1773,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1786,7 +1786,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260331-x86_64-0-Hourly2-GP3' --channel=alpha --networking=cilium" \
+            --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260428-x86_64-0-Hourly2-GP3' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1840,7 +1840,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1853,7 +1853,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260331-x86_64-0-Hourly2-GP3' --channel=alpha --networking=kindnet" \
+            --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260428-x86_64-0-Hourly2-GP3' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1907,7 +1907,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1920,7 +1920,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='309956199498/RHEL-10.1.0_HVM-20260331-arm64-0-Hourly2-GP3' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
+            --create-args="--image='309956199498/RHEL-10.1.0_HVM-20260429-arm64-0-Hourly2-GP3' --channel=alpha --networking=cilium --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -1975,7 +1975,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -1988,7 +1988,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='309956199498/RHEL-10.1.0_HVM-20260331-arm64-0-Hourly2-GP3' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+            --create-args="--image='309956199498/RHEL-10.1.0_HVM-20260429-arm64-0-Hourly2-GP3' --channel=alpha --networking=kindnet --zones=eu-west-1a --node-size=m6g.large --control-plane-size=m6g.large" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2043,7 +2043,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2110,7 +2110,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2177,7 +2177,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2245,7 +2245,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2313,7 +2313,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2326,7 +2326,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='075585003325/Flatcar-alpha-4669.0.0-hvm' --channel=alpha --networking=cilium" \
+            --create-args="--image='075585003325/Flatcar-alpha-4694.0.0-hvm' --channel=alpha --networking=cilium" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2380,7 +2380,7 @@ presubmits:
     path_alias: k8s.io/kops
     spec:
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2393,7 +2393,7 @@ presubmits:
             -v 2 \
             --up --build --down \
             --cloud-provider=aws \
-            --create-args="--image='075585003325/Flatcar-alpha-4669.0.0-hvm' --channel=alpha --networking=kindnet" \
+            --create-args="--image='075585003325/Flatcar-alpha-4694.0.0-hvm' --channel=alpha --networking=kindnet" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2446,7 +2446,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2460,7 +2460,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-121-18867-381-81' --channel=alpha --networking=cilium --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default" \
+            --create-args="--image='cos-cloud/cos-121-18867-381-125' --channel=alpha --networking=cilium --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2514,7 +2514,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2528,7 +2528,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-121-18867-381-81' --channel=alpha --networking=gce --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default" \
+            --create-args="--image='cos-cloud/cos-121-18867-381-125' --channel=alpha --networking=gce --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2582,7 +2582,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2596,7 +2596,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-arm64-121-18867-381-81' --channel=alpha --networking=cilium --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='cos-cloud/cos-arm64-121-18867-381-125' --channel=alpha --networking=cilium --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2650,7 +2650,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2664,7 +2664,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-arm64-121-18867-381-81' --channel=alpha --networking=gce --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='cos-cloud/cos-arm64-121-18867-381-125' --channel=alpha --networking=gce --set=cluster.spec.containerd.version=2.0.7 --set=cluster.spec.containerd.runc.version=1.3.4 --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2718,7 +2718,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2732,7 +2732,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=cilium --gce-service-account=default" \
+            --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=cilium --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2786,7 +2786,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2800,7 +2800,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=gce --gce-service-account=default" \
+            --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=gce --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2854,7 +2854,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2868,7 +2868,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-arm64-125-19216-220-130' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='cos-cloud/cos-arm64-125-19216-395-4' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2922,7 +2922,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -2936,7 +2936,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='cos-cloud/cos-arm64-125-19216-220-130' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='cos-cloud/cos-arm64-125-19216-395-4' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -2990,7 +2990,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3058,7 +3058,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3126,7 +3126,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3194,7 +3194,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3262,7 +3262,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3276,7 +3276,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-12-bookworm-v20260417' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-12-bookworm-v20260505' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3330,7 +3330,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3344,7 +3344,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-12-bookworm-v20260417' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-12-bookworm-v20260505' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3398,7 +3398,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3412,7 +3412,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-12-bookworm-arm64-v20260417' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-12-bookworm-arm64-v20260505' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3466,7 +3466,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3480,7 +3480,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-12-bookworm-arm64-v20260417' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-12-bookworm-arm64-v20260505' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3534,7 +3534,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3548,7 +3548,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-13-trixie-v20260417' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-13-trixie-v20260505' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3602,7 +3602,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3616,7 +3616,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-13-trixie-v20260417' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-13-trixie-v20260505' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3670,7 +3670,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3684,7 +3684,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-13-trixie-arm64-v20260417' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-13-trixie-arm64-v20260505' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3738,7 +3738,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3752,7 +3752,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='debian-cloud/debian-13-trixie-arm64-v20260417' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='debian-cloud/debian-13-trixie-arm64-v20260505' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3806,7 +3806,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3820,7 +3820,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-2204-jammy-v20260421' --channel=alpha --networking=cilium --gce-service-account=default" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-2204-jammy-v20260504' --channel=alpha --networking=cilium --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3874,7 +3874,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3888,7 +3888,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-2204-jammy-v20260421' --channel=alpha --networking=gce --gce-service-account=default" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-2204-jammy-v20260504' --channel=alpha --networking=gce --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -3942,7 +3942,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -3956,7 +3956,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260422' --channel=alpha --networking=cilium --gce-service-account=default" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260503' --channel=alpha --networking=cilium --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4010,7 +4010,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4024,7 +4024,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260422' --channel=alpha --networking=gce --gce-service-account=default" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260503' --channel=alpha --networking=gce --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4078,7 +4078,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4092,7 +4092,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-arm64-v20260422' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-arm64-v20260503' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4146,7 +4146,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4160,7 +4160,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-arm64-v20260422' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-arm64-v20260503' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4214,7 +4214,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4228,7 +4228,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-amd64-v20260422' --channel=alpha --networking=cilium --gce-service-account=default" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-amd64-v20260507' --channel=alpha --networking=cilium --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4282,7 +4282,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4296,7 +4296,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-amd64-v20260422' --channel=alpha --networking=gce --gce-service-account=default" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-amd64-v20260507' --channel=alpha --networking=gce --gce-service-account=default" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4350,7 +4350,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4364,7 +4364,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-arm64-v20260422' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-arm64-v20260507' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4418,7 +4418,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4432,7 +4432,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-arm64-v20260422' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
+            --create-args="--image='ubuntu-os-cloud/ubuntu-minimal-2404-noble-arm64-v20260507' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4486,7 +4486,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4500,7 +4500,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='rhel-cloud/rhel-10-v20260417' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
+            --create-args="--image='rhel-cloud/rhel-10-v20260505' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4554,7 +4554,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4568,7 +4568,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='rhel-cloud/rhel-10-v20260417' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='rhel-cloud/rhel-10-v20260505' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4622,7 +4622,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4636,7 +4636,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-arm64-v20260313' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
+            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-arm64-v20260427' --channel=alpha --networking=cilium --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4690,7 +4690,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4704,7 +4704,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-arm64-v20260313' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-arm64-v20260427' --channel=alpha --networking=gce --gce-service-account=default --node-size=t2a-standard-2 --control-plane-size=t2a-standard-2 --zones=us-central1-a --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4758,7 +4758,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4772,7 +4772,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-v20260313' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
+            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-v20260427' --channel=alpha --networking=cilium --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true --set=cluster.spec.networking.cilium.enableBPFMasquerade=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \
@@ -4826,7 +4826,7 @@ presubmits:
     spec:
       serviceAccountName: k8s-kops-test
       containers:
-      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
         imagePullPolicy: Always
         command:
         - runner.sh
@@ -4840,7 +4840,7 @@ presubmits:
             --up --build --down \
             --cloud-provider=gce \
             --admin-access=0.0.0.0/0 \
-            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-v20260313' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
+            --create-args="--image='rocky-linux-cloud/rocky-linux-10-optimized-gcp-v20260427' --channel=alpha --networking=gce --gce-service-account=default --set=cluster.spec.cloudProvider.gce.useStartupScript=true" \
             --kubernetes-version=https://dl.k8s.io/release/stable.txt \
             --kops-binary-path=/home/prow/go/src/k8s.io/kops/.build/dist/linux/amd64/kops \
             --test=kops \

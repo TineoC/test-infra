@@ -773,7 +773,7 @@ repos:
         name: area/vertical-pod-autoscaler/prometheus
         target: both
         addedBy: label
-      - color: 5319e7
+      - color: "5319e7"
         description: Issues or PRs related to the Addon Resizer component
         name: area/addon-resizer
         target: both
@@ -979,7 +979,7 @@ repos:
         target: issues
         prowPlugin: label
         addedBy: Release enhancements team ONLY
-      - color: 108737
+      - color: "108737"
         description: Denotes an enhancement issue is actively being tracked by the Release Team
         name: tracked/yes
         target: issues
@@ -1576,6 +1576,11 @@ repos:
         target: both
         prowPlugin: label
         addedBy: anyone
+      - color: 0052cc
+        description: Indicates that an announced CVE does not require a fix. 
+        name: cve/wontfix
+        target: both
+        addedBy: humans
       - color: d93f0b
         name: release-blocker
         target: both
@@ -2508,6 +2513,13 @@ repos:
           - name: area/release-infra
         target: both
         addedBy: label
+  kubernetes-sigs/provider-aws-test-infra:
+    labels:
+      - color: 0ffa16
+        description: Indicates a PR is trusted, used by tide for auto-merging PRs.
+        name: skip-review
+        target: prs
+        addedBy: provider-aws-test-infra-admins
   kubernetes-sigs/prow:
     labels:
       - color: 0052cc

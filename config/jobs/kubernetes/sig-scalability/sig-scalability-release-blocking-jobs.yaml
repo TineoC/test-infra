@@ -19,6 +19,7 @@ periodics:
   job_queue_name: "5k-gce-scale-test" # DON'T REMOVE THIS
   decoration_config:
     timeout: 270m
+    skip_cloning: true
   annotations:
     testgrid-num-failures-to-alert: '2'
     testgrid-alert-email: kubernetes-sig-scale@googlegroups.com, kubernetes-scalability-tickets@google.com, release-team@kubernetes.io
@@ -33,7 +34,7 @@ periodics:
       secret:
         secretName: scale-pull-cache-token
     containers:
-    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260316-e86cefa561-master
+    - image: gcr.io/k8s-staging-test-infra/kubekins-e2e:v20260511-f09cee265c-master
       volumeMounts:
       - name: cache-secret
         readOnly: true
@@ -70,10 +71,10 @@ periodics:
       resources:
         requests:
           cpu: 6
-          memory: "39Gi"
+          memory: "16Gi"
         limits:
           cpu: 6
-          memory: "39Gi"
+          memory: "16Gi"
 
 # This is a sig-release-master-blocking job.
 # The frequency was cut to reduce infrastructure costs.
@@ -115,7 +116,7 @@ periodics:
   spec:
     serviceAccountName: prow-build
     containers:
-    - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+    - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       command:
       - runner.sh
       args:
@@ -182,10 +183,10 @@ periodics:
       resources:
         requests:
           cpu: 7
-          memory: "32Gi"
+          memory: "27Gi"
         limits:
           cpu: 7
-          memory: "32Gi"
+          memory: "27Gi"
 
 - name: ci-kubernetes-e2e-gce-scale-performance-100
   tags:
@@ -225,7 +226,7 @@ periodics:
   spec:
     serviceAccountName: prow-build
     containers:
-    - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+    - image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       command:
       - runner.sh
       args:

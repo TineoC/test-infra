@@ -50,7 +50,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-3322ce81e1-eafeb.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -68,7 +68,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, sig-cluster-lifecycle-kops, sig-k8s-infra-canaries
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-network-cilium, sig-cluster-lifecycle-kops, sig-k8s-infra-canaries
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-eks-pod-identity
 
@@ -102,7 +102,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --zones=eu-central-1a --node-size=m6g.large --control-plane-size=m6g.large" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --zones=eu-central-1a --node-size=m6g.large --control-plane-size=m6g.large" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -119,7 +119,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -136,7 +136,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-ci, kops-latest, kops-network-plugins, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-ci, kops-latest, kops-network-cilium, kops-network-plugins, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-cni-cilium-k8s-ci
 
@@ -170,7 +170,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260422' --channel=alpha --networking=cilium --gce-service-account=default" \
+          --create-args="--image='ubuntu-os-cloud/ubuntu-2404-noble-amd64-v20260503' --channel=alpha --networking=cilium --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -187,7 +187,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -204,7 +204,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-gce, kops-k8s-ci, kops-latest, kops-network-plugins, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-gce, kops-k8s-ci, kops-latest, kops-network-cilium, kops-network-plugins, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-gce-cni-cilium-k8s-ci
 
@@ -238,7 +238,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=calico --ipv6 --topology=private --dns=public --bastion --zones=us-west-2a" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=calico --ipv6 --topology=private --dns=public --bastion --zones=us-west-2a" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -253,7 +253,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -270,7 +270,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: calico
-    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-plugins, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-calico, kops-network-plugins, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-cni-calico-ipv6
 
@@ -304,7 +304,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --ipv6 --topology=private --dns=public --bastion --zones=us-west-2a" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --ipv6 --topology=private --dns=public --bastion --zones=us-west-2a" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -319,7 +319,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -336,7 +336,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-plugins, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-cilium, kops-network-plugins, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-cni-cilium-ipv6
 
@@ -370,7 +370,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=kindnet --ipv6 --topology=private --dns=public --bastion --zones=us-west-2a" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=kindnet --ipv6 --topology=private --dns=public --bastion --zones=us-west-2a" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -385,7 +385,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -402,7 +402,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-plugins, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-kindnet, kops-network-plugins, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-cni-kindnet-ipv6
 
@@ -436,7 +436,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='075585003325/Flatcar-alpha-4669.0.0-arm64-hvm' --channel=alpha --networking=cilium --ipv6 --topology=private --dns=public --bastion" \
+          --create-args="--image='075585003325/Flatcar-alpha-4694.0.0-arm64-hvm' --channel=alpha --networking=cilium --ipv6 --topology=private --dns=public --bastion" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --validation-wait=20m \
@@ -452,7 +452,7 @@ periodics:
         value: core
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -469,7 +469,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-flatcar, kops-distros, kops-ipv6, kops-k8s-stable, kops-latest, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-flatcar, kops-distros, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-ipv6-flatcar
 
@@ -503,7 +503,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='075585003325/Flatcar-alpha-4669.0.0-arm64-hvm' --channel=alpha --networking=calico --ipv6 --topology=private --dns=public --bastion" \
+          --create-args="--image='075585003325/Flatcar-alpha-4694.0.0-arm64-hvm' --channel=alpha --networking=calico --ipv6 --topology=private --dns=public --bastion" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --validation-wait=20m \
@@ -519,7 +519,7 @@ periodics:
         value: core
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -536,7 +536,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: calico
-    testgrid-dashboards: kops-distro-flatcar, kops-distros, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-plugins, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-flatcar, kops-distros, kops-ipv6, kops-k8s-stable, kops-latest, kops-network-calico, kops-network-plugins, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-cni-calico-ipv6-flatcar
 
@@ -570,7 +570,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --api-loadbalancer-type=public --set=cluster.spec.cloudProvider.aws.warmPool.minSize=1" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --api-loadbalancer-type=public --set=cluster.spec.cloudProvider.aws.warmPool.minSize=1" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -585,7 +585,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -602,7 +602,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-warm-pool
 
@@ -636,7 +636,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --zones=us-west-1a --dns=public" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --zones=us-west-1a --dns=public" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --terraform-version=1.5.5 \
@@ -652,7 +652,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -669,7 +669,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-scenario-terraform
 
@@ -703,7 +703,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --ipv6 --topology=private --bastion --zones=us-west-1a --dns=public" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --ipv6 --topology=private --bastion --zones=us-west-1a --dns=public" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --terraform-version=1.5.5 \
@@ -719,7 +719,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -736,7 +736,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-scenario-ipv6-terraform
 
@@ -770,7 +770,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=calico --control-plane-count=3 --zones=eu-west-1a,eu-west-1b,eu-west-1c" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=calico --control-plane-count=3 --zones=eu-west-1a,eu-west-1b,eu-west-1c" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -785,7 +785,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -802,7 +802,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: calico
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-calico, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-ha-euwest1
 
@@ -844,7 +844,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-4342699135-9b4dd.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -862,7 +862,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-aws-load-balancer-controller
 
@@ -906,7 +906,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-349a115d39-16181.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -924,7 +924,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-keypair-rotation-ha
 
@@ -970,7 +970,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-127cbce38e-b114d.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -988,7 +988,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-metrics-server
 
@@ -1030,7 +1030,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-49d63c55eb-ac683.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1048,7 +1048,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-pod-identity-webhook
 
@@ -1090,7 +1090,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-c0d41e2af2-13250.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1108,7 +1108,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-addon-resource-tracking
 
@@ -1142,7 +1142,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --set=cluster.spec.externalDNS.provider=external-dns --dns=public" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --set=cluster.spec.externalDNS.provider=external-dns --dns=public" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1157,7 +1157,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1174,7 +1174,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-external-dns
 
@@ -1208,7 +1208,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium --ipv6 --bastion --set=cluster.spec.externalDNS.provider=external-dns --dns=public" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium --ipv6 --bastion --set=cluster.spec.externalDNS.provider=external-dns --dns=public" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
           --test=kops \
@@ -1223,7 +1223,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1240,7 +1240,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-ipv6-external-dns
 
@@ -1274,7 +1274,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260424' --channel=alpha --networking=cilium" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-arm64-server-20260507' --channel=alpha --networking=cilium" \
           --env=KOPS_FEATURE_FLAGS=APIServerNodes \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
@@ -1291,7 +1291,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1308,7 +1308,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-apiserver-nodes
 
@@ -1350,7 +1350,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-8b031a24de-4b12b.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1368,7 +1368,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-karpenter
 
@@ -1412,7 +1412,7 @@ periodics:
         value: "ubuntu"
       - name: CLUSTER_NAME
         value: "e2e-6e00e57ddb-8c03f.tests-kops-aws.k8s.io"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1430,7 +1430,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-u2404, kops-ipv6, kops-k8s-stable, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-ipv6-karpenter
 
@@ -1464,7 +1464,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=cilium" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=cilium" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -1482,7 +1482,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1498,7 +1498,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: kops-distro-al2023, kops-k8s-ci, kops-latest, kops-misc, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-al2023, kops-k8s-ci, kops-latest, kops-misc, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: kops-aws-hostname-bug121018
 
@@ -1532,7 +1532,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260331-x86_64-0-Hourly2-GP3' --channel=alpha --networking=cilium --set=cluster.spec.containerd.selinuxEnabled=true --set=cluster.spec.kubeControllerManager.controllers=* --set=cluster.spec.kubeControllerManager.controllers=selinux-warning-controller" \
+          --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260428-x86_64-0-Hourly2-GP3' --channel=alpha --networking=cilium --set=cluster.spec.containerd.selinuxEnabled=true --set=cluster.spec.kubeControllerManager.controllers=* --set=cluster.spec.kubeControllerManager.controllers=selinux-warning-controller" \
           --env=KOPS_FEATURE_FLAGS=SELinuxMount \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
@@ -1552,7 +1552,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1571,7 +1571,7 @@ periodics:
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
     testgrid-alert-email: kubernetes-sig-storage-test-failures@googlegroups.com
-    testgrid-dashboards: kops-distro-rhel9, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rhel9, kops-k8s-ci, kops-latest, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-num-failures-to-alert: '10'
     testgrid-tab-name: kops-aws-selinux
@@ -1606,7 +1606,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260331-x86_64-0-Hourly2-GP3' --channel=alpha --networking=cilium --set=cluster.spec.containerd.selinuxEnabled=true --set=cluster.spec.kubeControllerManager.controllers=* --set=cluster.spec.kubeControllerManager.controllers=selinux-warning-controller" \
+          --create-args="--image='309956199498/RHEL-9.7.0_HVM-20260428-x86_64-0-Hourly2-GP3' --channel=alpha --networking=cilium --set=cluster.spec.containerd.selinuxEnabled=true --set=cluster.spec.kubeControllerManager.controllers=* --set=cluster.spec.kubeControllerManager.controllers=selinux-warning-controller" \
           --env=KOPS_FEATURE_FLAGS=SELinuxMount \
           --kubernetes-feature-gates=SELinuxMount,SELinuxChangePolicy \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
@@ -1627,7 +1627,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1646,7 +1646,7 @@ periodics:
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
     testgrid-alert-email: kubernetes-sig-storage-test-failures@googlegroups.com
-    testgrid-dashboards: kops-distro-rhel9, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops
+    testgrid-dashboards: kops-distro-rhel9, kops-k8s-ci, kops-latest, kops-network-cilium, sig-cluster-lifecycle-kops
     testgrid-days-of-results: '90'
     testgrid-num-failures-to-alert: '10'
     testgrid-tab-name: kops-aws-selinux-alpha
@@ -1681,7 +1681,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=kindnet --set=spec.nodeProblemDetector.enabled=true --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=kindnet --set=spec.nodeProblemDetector.enabled=true --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -1699,7 +1699,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1716,7 +1716,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, kops-network-kindnet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '35'
     testgrid-tab-name: ci-kubernetes-kops-cos-gce-canary
 
@@ -1750,7 +1750,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.nodeProblemDetector.enabled=true --set=spec.packages=nfs-utils" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.nodeProblemDetector.enabled=true --set=spec.packages=nfs-utils" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -1768,7 +1768,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1785,7 +1785,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kubenet
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-kubenet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '35'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-canary
 
@@ -1819,7 +1819,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260424' --channel=alpha --networking=kubenet --set=spec.nodeProblemDetector.enabled=true --set=spec.packages=nfs-common" \
+          --create-args="--image='099720109477/ubuntu/images/hvm-ssd/ubuntu-jammy-22.04-amd64-server-20260503' --channel=alpha --networking=kubenet --set=spec.nodeProblemDetector.enabled=true --set=spec.packages=nfs-common" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -1837,7 +1837,7 @@ periodics:
         value: ubuntu
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1854,7 +1854,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kubenet
-    testgrid-dashboards: kops-distro-u2204, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-u2204, kops-k8s-ci, kops-latest, kops-network-kubenet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '35'
     testgrid-tab-name: ci-kubernetes-kops-ubuntu-aws-canary
 
@@ -1888,7 +1888,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=kindnet --set=spec.networking.networkID=default --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=kindnet --set=spec.networking.networkID=default --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -1907,7 +1907,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1924,7 +1924,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, kops-network-kindnet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-cos-gce-slow-canary
 
@@ -1958,7 +1958,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.packages=nfs-utils" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.packages=nfs-utils" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -1977,7 +1977,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -1994,7 +1994,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kubenet
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-kubenet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-slow-canary
 
@@ -2028,7 +2028,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=kindnet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=kindnet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -2047,7 +2047,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2064,7 +2064,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, kops-network-kindnet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-cos-gce-conformance-canary
 
@@ -2098,7 +2098,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -2117,7 +2117,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2134,7 +2134,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kubenet
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-kubenet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-conformance-canary
 
@@ -2168,7 +2168,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=amazonvpc --node-size=r5d.xlarge --control-plane-size=r5d.xlarge --set=cluster.spec.networking.amazonVPC.env=ENABLE_PREFIX_DELEGATION=true --set=cluster.spec.networking.amazonVPC.env=MINIMUM_IP_TARGET=80 --set=cluster.spec.networking.amazonVPC.env=WARM_IP_TARGET=10 --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=amazonvpc --node-size=r5d.xlarge --control-plane-size=r5d.xlarge --set=cluster.spec.networking.amazonVPC.env=ENABLE_PREFIX_DELEGATION=true --set=cluster.spec.networking.amazonVPC.env=MINIMUM_IP_TARGET=80 --set=cluster.spec.networking.amazonVPC.env=WARM_IP_TARGET=10 --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
           --cluster-name="kubernetes-e2e-al2023-aws-conformance-aws-cni.k8s.local" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/release/stable.txt \
@@ -2186,7 +2186,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2203,7 +2203,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: amazonvpc
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-stable, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-stable, kops-latest, kops-network-amazonvpc, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-conformance-aws-cni
 
@@ -2237,7 +2237,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=amazonvpc --node-size=r5d.xlarge --control-plane-size=r5d.xlarge --set=cluster.spec.networking.amazonVPC.env=ENABLE_PREFIX_DELEGATION=true --set=cluster.spec.networking.amazonVPC.env=MINIMUM_IP_TARGET=80 --set=cluster.spec.networking.amazonVPC.env=WARM_IP_TARGET=10 --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=amazonvpc --node-size=r5d.xlarge --control-plane-size=r5d.xlarge --set=cluster.spec.networking.amazonVPC.env=ENABLE_PREFIX_DELEGATION=true --set=cluster.spec.networking.amazonVPC.env=MINIMUM_IP_TARGET=80 --set=cluster.spec.networking.amazonVPC.env=WARM_IP_TARGET=10 --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
           --cluster-name="kubernetes-e2e-al2023-aws-conformance-aws-cni-canary.k8s.local" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
@@ -2257,7 +2257,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2274,7 +2274,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: amazonvpc
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-amazonvpc, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-conformance-aws-cni-canary
 
@@ -2308,7 +2308,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=cilium --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeProxy.enabled=false --set=spec.networking.cilium.enableNodePort=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=cilium --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeProxy.enabled=false --set=spec.networking.cilium.enableNodePort=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
           --cluster-name="kubernetes-e2e-al2023-aws-conformance-cilium.k8s.local" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
@@ -2328,7 +2328,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2345,7 +2345,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: cilium
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-cilium, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-conformance-cilium-canary
 
@@ -2379,7 +2379,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=kindnet --node-count=3 --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=kindnet --node-count=3 --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -2398,7 +2398,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2415,7 +2415,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, kops-network-kindnet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: ci-kubernetes-kops-cos-gce-disruptive-canary
 
@@ -2449,7 +2449,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=gce --node-count=3 --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=gce --node-count=3 --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -2468,7 +2468,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2485,7 +2485,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: gce
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, kops-network-gce, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: ci-kubernetes-kops-cos-gce-reboot-canary
 
@@ -2519,7 +2519,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=amazonvpc --node-size=r5d.xlarge --control-plane-size=r5d.xlarge --set=cluster.spec.networking.amazonVPC.env=ENABLE_PREFIX_DELEGATION=true --set=cluster.spec.networking.amazonVPC.env=MINIMUM_IP_TARGET=80 --set=cluster.spec.networking.amazonVPC.env=WARM_IP_TARGET=10 --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=amazonvpc --node-size=r5d.xlarge --control-plane-size=r5d.xlarge --set=cluster.spec.networking.amazonVPC.env=ENABLE_PREFIX_DELEGATION=true --set=cluster.spec.networking.amazonVPC.env=MINIMUM_IP_TARGET=80 --set=cluster.spec.networking.amazonVPC.env=WARM_IP_TARGET=10 --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -2538,7 +2538,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2555,7 +2555,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: amazonvpc
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-amazonvpc, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '90'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-disruptive-canary
 
@@ -2590,7 +2590,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=kindnet --set=cluster.spec.cloudConfig.manageStorageClasses=false --node-volume-size=100 --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=kindnet --set=cluster.spec.cloudConfig.manageStorageClasses=false --node-volume-size=100 --gce-service-account=default" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -2609,7 +2609,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2626,7 +2626,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, kops-network-kindnet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '71'
     testgrid-tab-name: ci-kubernetes-kops-cos-gce-serial-canary
 
@@ -2660,7 +2660,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --node-volume-size=100 --set=spec.packages=nfs-utils --set=spec.packages=git" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --node-volume-size=100 --set=spec.packages=nfs-utils --set=spec.packages=git" \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
           --test=kops \
@@ -2679,7 +2679,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2696,7 +2696,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kubenet
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-kubenet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '71'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-serial-canary
 
@@ -2730,7 +2730,7 @@ periodics:
           -v 2 \
           --up --down \
           --cloud-provider=aws \
-          --create-args="--image='137112412989/al2023-ami-2023.11.20260413.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log --set=spec.kubeAPIServer.runtimeConfig=api/all=true" \
+          --create-args="--image='137112412989/al2023-ami-2023.11.20260509.0-kernel-6.12-x86_64' --channel=alpha --networking=kubenet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log --set=spec.kubeAPIServer.runtimeConfig=api/all=true" \
           --kubernetes-feature-gates=AllAlpha,AllBeta,-EventedPLEG \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
@@ -2750,7 +2750,7 @@ periodics:
         value: ec2-user
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2767,7 +2767,7 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kubenet
-    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: amazon-ec2-kops, kops-distro-al2023, kops-k8s-ci, kops-latest, kops-network-kubenet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-al2023-aws-alpha-features
 
@@ -2801,7 +2801,7 @@ periodics:
           --up --down \
           --cloud-provider=gce \
           --admin-access=0.0.0.0/0 \
-          --create-args="--image='cos-cloud/cos-125-19216-220-130' --channel=alpha --networking=kindnet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log --set=spec.kubeAPIServer.runtimeConfig=api/all=true --gce-service-account=default" \
+          --create-args="--image='cos-cloud/cos-125-19216-395-4' --channel=alpha --networking=kindnet --set=spec.kubeAPIServer.logLevel=4 --set=spec.kubeAPIServer.auditLogMaxSize=2000000000 --set=spec.kubeAPIServer.enableAggregatorRouting=true --set=spec.kubeAPIServer.auditLogPath=/var/log/kube-apiserver-audit.log --set=spec.kubeAPIServer.runtimeConfig=api/all=true --gce-service-account=default" \
           --kubernetes-feature-gates=AllAlpha,AllBeta,-EventedPLEG \
           --kops-version-marker=https://storage.googleapis.com/k8s-staging-kops/kops/releases/markers/master/latest-ci-updown-green.txt \
           --kubernetes-version=https://dl.k8s.io/ci/latest.txt \
@@ -2821,7 +2821,7 @@ periodics:
         value: prow
       - name: GINKGO_NO_COLOR
         value: "TRUE"
-      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260316-e86cefa561-master
+      image: us-central1-docker.pkg.dev/k8s-staging-test-infra/images/kubekins-e2e:v20260512-1f34ef0df3-master
       imagePullPolicy: Always
       resources:
         limits:
@@ -2838,6 +2838,6 @@ periodics:
     test.kops.k8s.io/kops_channel: alpha
     test.kops.k8s.io/kops_version: latest
     test.kops.k8s.io/networking: kindnet
-    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
+    testgrid-dashboards: kops-distro-cos125, kops-gce, kops-k8s-ci, kops-latest, kops-network-kindnet, sig-cluster-lifecycle-kops, sig-cluster-lifecycle-kubeup-to-kops
     testgrid-days-of-results: '47'
     testgrid-tab-name: ci-kubernetes-kops-cos-gce-alpha-features

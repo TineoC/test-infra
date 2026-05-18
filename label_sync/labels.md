@@ -27,6 +27,7 @@
 - [Labels that apply to kubernetes-sigs/krew, for both issues and PRs](#labels-that-apply-to-kubernetes-sigskrew-for-both-issues-and-prs)
 - [Labels that apply to kubernetes-sigs/kubespray, only for PRs](#labels-that-apply-to-kubernetes-sigskubespray-only-for-prs)
 - [Labels that apply to kubernetes-sigs/promo-tools, for both issues and PRs](#labels-that-apply-to-kubernetes-sigspromo-tools-for-both-issues-and-prs)
+- [Labels that apply to kubernetes-sigs/provider-aws-test-infra, only for PRs](#labels-that-apply-to-kubernetes-sigsprovider-aws-test-infra-only-for-prs)
 - [Labels that apply to kubernetes-sigs/prow, for both issues and PRs](#labels-that-apply-to-kubernetes-sigsprow-for-both-issues-and-prs)
 - [Labels that apply to kubernetes/autoscaler, for both issues and PRs](#labels-that-apply-to-kubernetesautoscaler-for-both-issues-and-prs)
 - [Labels that apply to kubernetes/autoscaler, only for PRs](#labels-that-apply-to-kubernetesautoscaler-only-for-prs)
@@ -405,6 +406,12 @@ larger set of contributors to apply/remove them.
 | <a id="area/artifacts" href="#area/artifacts">`area/artifacts`</a> | Issues or PRs related to the hosting of release artifacts for subprojects| anyone |  [label](https://github.com/kubernetes-sigs/prow/tree/main/pkg/plugins/label) |
 | <a id="area/release-eng" href="#area/release-eng">`area/release-eng`</a> | Issues or PRs related to the Release Engineering subproject <br><br> This was previously `area/release-infra`, | label | |
 
+## Labels that apply to kubernetes-sigs/provider-aws-test-infra, only for PRs
+
+| Name | Description | Added By | Prow Plugin |
+| ---- | ----------- | -------- | --- |
+| <a id="skip-review" href="#skip-review">`skip-review`</a> | Indicates a PR is trusted, used by tide for auto-merging PRs.| provider-aws-test-infra-admins | |
+
 ## Labels that apply to kubernetes-sigs/prow, for both issues and PRs
 
 | Name | Description | Added By | Prow Plugin |
@@ -633,6 +640,7 @@ larger set of contributors to apply/remove them.
 | <a id="area/workload-api/job" href="#area/workload-api/job">`area/workload-api/job`</a> | | label | |
 | <a id="area/workload-api/replicaset" href="#area/workload-api/replicaset">`area/workload-api/replicaset`</a> | | label | |
 | <a id="area/workload-aware" href="#area/workload-aware">`area/workload-aware`</a> | Categorizes an issue or PR as relevant to Workload-aware and Topology-aware scheduling subprojects.| humans | |
+| <a id="cve/wontfix" href="#cve/wontfix">`cve/wontfix`</a> | Indicates that an announced CVE does not require a fix.| humans | |
 | <a id="kind/dependency" href="#kind/dependency">`kind/dependency`</a> | Categorizes issue or PR as related to a dependency update.| anyone |  [label](https://github.com/kubernetes-sigs/prow/tree/main/pkg/plugins/label) |
 | <a id="kind/design" href="#kind/design">`kind/design`</a> | Categorizes issue or PR as related to design.| humans | |
 | <a id="milestone/incomplete-labels" href="#milestone/incomplete-labels">`milestone/incomplete-labels`</a> | | humans | |
